@@ -10,7 +10,7 @@ const forgotPasswordLinks = document.querySelectorAll('.forgot-password-link');
 
 // Google Auth Configuration
 const googleConfig = {
-    clientId: '67745334120-3a3crb699517m8qstnqf3g8f3ma4re12.apps.googleusercontent.com', // Replace with your Google Client ID
+    clientId: process.env.client_id, // Replace with your Google Client ID
     scope: 'email profile'
 };
 
