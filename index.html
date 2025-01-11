@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deployment Impact Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+    <link href="/css/home.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!--Navbar Section-->
+    <div class="header">
+      <nav class="navbar navbar-expand-lg " style="height: 75px;background-color: #4f7bc4;">
+        <div class="container-fluid">
+          <a href="index.html">
+            <img src="/images/icon.jpg" alt="This is logo" width="50" height="50" style="border-radius: 30px;" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 80px;display: flex; flex-direction: row; gap: 40px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="color: white; font-size: 1.3rem;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/html/about.html" style="color: white; font-size: 1.3rem;">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/html/blog.html" style="color: white; font-size: 1.3rem;">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/html/contact.html" style="color: white; font-size: 1.3rem;">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline" type="submit" style="color:#4f7bc4; background-color:#FFD700;">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--First section-->
+    <section class="deployment-impact-tracker py-5" style="background-color: #f0f4f8;">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Left Side Image (Placeholder for Image URL) -->
+            <div class="col-md-6 text-center">
+              <img src="/images/sdlc.jpg" alt="Deployment Impact Tracker" class="img-fluid rounded shadow" style="max-width: 100%; height: auto; object-fit: cover;margin-left: -50px; margin-top: -30px;">
+            </div>
+      
+            <!-- Right Side Text -->
+            <div class="col-md-6">
+              <h2 class="display-4 text-primary font-weight-bold mb-4">Monitor Your Deployment Impact with Sentiment Analysis</h2>
+              <p class="lead text-muted mb-4">
+                Discover how your software deployments are affecting user experience in real-time with advanced sentiment analysis. Our app tracks the emotional impact of each deployment, offering detailed insights to ensure positive user experiences and improve future updates.
+              </p>
+              <ul class="list-unstyled mb-4">
+                <li><i class="bi bi-check-circle text-success"></i> Track sentiment trends of user feedback</li>
+                <li><i class="bi bi-check-circle text-success"></i> Monitor system performance post-deployment</li>
+                <li><i class="bi bi-check-circle text-success"></i> Visualize real-time impact with intuitive dashboards</li>
+              </ul>
+              <a href="/html/authenticate.html" class="btn btn-primary btn-lg shadow-lg">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <!--Information of application section-->
+
+    <section class="how-it-works py-5">
+        <div class="container">
+          <h2 class="text-center text-primary mb-5">How It Works</h2>
+          <div class="row">
+            <!-- Step 1: Deployment -->
+            <div class="col-md-4 text-center mb-4">
+              <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <div class="icon mb-3">
+                    <i class="bi bi-cloud-arrow-up text-primary" style="font-size: 3rem;"></i>
+                  </div>
+                  <h5 class="card-title">Step 1: Deploy Your Application</h5>
+                  <p class="card-text">Simply deploy your application, and our system starts tracking user feedback.</p>
+                </div>
+              </div>
+              <div class="arrow text-center mt-3">
+                <i class="bi bi-arrow-down-circle text-primary" style="font-size: 2rem;"></i>
+              </div>
+            </div>
+      
+            <!-- Step 2: Sentiment Analysis -->
+            <div class="col-md-4 text-center mb-4">
+              <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <div class="icon mb-3">
+                    <i class="bi bi-graph-up-arrow text-primary" style="font-size: 3rem;"></i>
+                  </div>
+                  <h5 class="card-title">Step 2: Sentiment Analysis</h5>
+                  <p class="card-text">Our sentiment analysis engine processes user reviews and feedback to determine impact.</p>
+                </div>
+              </div>
+              <div class="arrow text-center mt-3">
+                <i class="bi bi-arrow-down-circle text-primary" style="font-size: 2rem;"></i>
+              </div>
+            </div>
+      
+            <!-- Step 3: Monitor & Improve -->
+            <div class="col-md-4 text-center mb-4">
+              <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <div class="icon mb-3">
+                    <i class="bi bi-bar-chart-line text-primary" style="font-size: 3rem;"></i>
+                  </div>
+                  <h5 class="card-title">Step 3: Monitor & Improve</h5>
+                  <p class="card-text">Track your deployment’s performance and make improvements based on real-time data.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Impact Graphs / Data Visualization Section -->
+<section id="impact-graphs" class="my-5 py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center mb-5">
+          <h2 class="display-4">Deployment Impact Over Time</h2>
+          <p class="lead">See how the deployments affect user sentiment and experience over time.</p>
+        </div>
+      </div>
+      <!-- Chart.js Container -->
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card shadow-sm">
+            <div class="card-header text-center bg-primary text-white">
+              <h4>Sentiment Analysis for Recent Deployments</h4>
+            </div>
+            <div class="card-body">
+              <canvas id="sentimentChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+      <!--Features section-->
+
+      <section class="features-benefits py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center text-primary mb-5">Key Features & Benefits</h2>
+          <div class="row">
+            <!-- Feature 1: Sentiment Analysis -->
+            <div class="col-md-6 mb-4">
+              <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-person-check text-success"></i> User Sentiment Analysis</h5>
+                  <p class="card-text">Measure the positive, negative, and neutral sentiment of your users to understand how they feel about your latest deployment.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Feature 2: Real-Time Monitoring -->
+            <div class="col-md-6 mb-4">
+              <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-bar-chart-line text-success"></i> Real-Time Monitoring</h5>
+                  <p class="card-text">Get real-time insights into your deployment's performance and user experience to make timely improvements.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Feature 3: Easy Integration -->
+            <div class="col-md-6 mb-4">
+              <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-gear-fill text-success"></i> Easy Integration</h5>
+                  <p class="card-text">Seamlessly integrate our tracking system into your existing deployment workflow and start analyzing instantly.</p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Feature 4: Collaborative Features -->
+            <div class="col-md-6 mb-4">
+              <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-people-fill text-success"></i> Collaborative Features</h5>
+                  <p class="card-text">Work with your team to make decisions based on collective insights and improve deployment results.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Trust Section-->
+
+      <section class="testimonials py-5">
+        <div class="container">
+          <h2 class="text-center text-primary mb-5">What Our Users Say</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="testimonial card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <p class="card-text">"This tool has completely transformed how we monitor user feedback after deployments. The sentiment analysis is incredibly accurate!"</p>
+                  <strong>- Jane Doe, Product Manager</strong>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="testimonial card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <p class="card-text">"Real-time monitoring and analysis helped us fix issues quickly, improving the overall user experience. Highly recommended!"</p>
+                  <strong>- John Smith, CTO</strong>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="testimonial card shadow-sm border-light rounded">
+                <div class="card-body">
+                  <p class="card-text">"I love how easy it was to integrate this into our current workflow. The insights we gain help guide our future updates."</p>
+                  <strong>- Sarah Lee, Lead Developer</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    
+      <!--call to action section-->
+
+      <section class="cta py-5 bg-primary text-white text-center">
+        <div class="container">
+          <h2 class="mb-3">Start Improving Your Application Today!</h2>
+          <p class="lead mb-4">Sign up now and experience the power of real-time insights and sentiment analysis to boost your deployment results.</p>
+          <a href="#" class="btn btn-light btn-lg">Get Started</a>
+        </div>
+      </section>
+
+
+      <!-- Pricing Section -->
+<section id="pricing" class="bg-light py-5">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="display-4">Our Pricing Plans</h2>
+          <p class="lead">Choose the best plan that suits your needs. Easy, affordable, and flexible.</p>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center">
+        <!-- Plan 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-primary">
+            <div class="card-header text-white bg-primary">
+              <h4>Basic Plan</h4>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">$19/month</h3>
+              <p class="card-text">Perfect for small teams looking to track deployment impacts and sentiments.</p>
+              <ul>
+                <li>Basic Sentiment Analysis</li>
+                <li>Basic Data Visualizations</li>
+                <li>Email Support</li>
+              </ul>
+              <button class="btn btn-primary" id="razorpay-basic">Choose Plan</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Plan 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-success">
+            <div class="card-header text-white bg-success">
+              <h4>Professional Plan</h4>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">$49/month</h3>
+              <p class="card-text">For growing teams who want advanced monitoring and analysis features.</p>
+              <ul>
+                <li>Advanced Sentiment Analysis</li>
+                <li>Comprehensive Data Visualization</li>
+                <li>Priority Support</li>
+              </ul>
+              <button class="btn btn-success" id="razorpay-professional">Choose Plan</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Plan 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-danger">
+            <div class="card-header text-white bg-danger">
+              <h4>Enterprise Plan</h4>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">$99/month</h3>
+              <p class="card-text">For large teams or organizations who need advanced analytics and monitoring tools.</p>
+              <ul>
+                <li>Customizable Sentiment Analysis</li>
+                <li>Real-time Data Dashboards</li>
+                <li>24/7 Premium Support</li>
+              </ul>
+              <button class="btn btn-danger" id="razorpay-enterprise">Choose Plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ Section -->
+<section id="faq" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Frequently Asked Questions (FAQ)</h2>
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  What is the Deployment Impact Tracker?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  The Deployment Impact Tracker helps teams measure the user experience impact of their deployments by analyzing sentiment and other monitoring data to gauge the success of each deployment.
+                </div>
+              </div>
+            </div>
+  
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How does sentiment analysis work in this application?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Sentiment analysis in our app processes user feedback, reviews, or other textual data to determine whether the deployment has a positive, negative, or neutral impact on users. This helps teams quickly identify issues and improve the user experience.
+                </div>
+              </div>
+            </div>
+  
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Is the tool suitable for all types of deployments?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes, the Deployment Impact Tracker is versatile and can be used for various types of software deployments, including web applications, mobile apps, and internal systems, helping teams monitor and assess user feedback across different platforms.
+                </div>
+              </div>
+            </div>
+  
+            <!-- FAQ Item 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  What kind of data does the tracker analyze?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  The tool analyzes user feedback (reviews, comments), monitoring logs, and other metrics that can help assess the success of your deployment, including uptime, performance, and any issues encountered by users.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+ <!-- Footer Section -->
+<footer>
+    <!-- Logo or Brand Name -->
+    <img src="./images/icon.jpg" alt="Logo" class="footer-logo" style="border-radius: 100px;height: 100px; width: 100px;">
+    
+    <!-- Footer Title -->
+    <h5>Get In Touch</h5>
+    
+    <!-- Short Description -->
+    <p>We are here to help you track and improve your deployment impact using advanced sentiment analysis techniques.</p>
+    
+    <!-- Social Media Links (Add appropriate links) -->
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  
+    <!-- Footer Navigation -->
+    <ul class="footer-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    
+    <!-- Copyright Notice -->
+    <div class="copyright">
+      <p>&copy; 2025 Deployment Impact Tracker. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  
+  
+  
+      
+      
+      
+
+    <script src="/js/home.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

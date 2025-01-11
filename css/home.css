@@ -1,0 +1,302 @@
+.deployment-impact-tracker {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .deployment-impact-tracker h2 {
+    font-size: 2.5rem;
+  }
+  .deployment-impact-tracker p {
+    font-size: 1.1rem;
+  }
+  .deployment-impact-tracker ul li {
+    font-size: 1.1rem;
+  }
+  .deployment-impact-tracker .btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border-radius: 30px;
+  }
+  .deployment-impact-tracker .btn:hover {
+    background-color: #375a7f;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .icon i {
+    transition: transform 0.3s;
+  }
+  
+  .card:hover .icon i {
+    transform: scale(1.2);
+  }
+  
+  /* Arrow animations */
+  .arrow i {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover ~ .arrow i {
+    transform: translateY(10px);
+  }
+
+
+
+/* Hover effect for cards in Feature & Benefits */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .card-body:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-5px);
+  }
+  
+  .card-title i {
+    margin-right: 10px;
+  }
+  
+  /* Icon transition */
+  .card-body i {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover .card-title i {
+    transform: rotate(15deg);
+  }
+  
+
+/* Styling for Testimonial Cards */
+.testimonial {
+    transition: all 0.3s ease;
+    padding: 2rem;
+  }
+  
+  .testimonial:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+  }
+  
+  .testimonial .card-body {
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  .testimonial .card-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial strong {
+    display: block;
+    font-weight: bold;
+  }
+    
+  .cta {
+    background-color: #007bff;
+    padding: 3rem 0;
+  }
+  
+  .cta h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  
+  .cta p {
+    font-size: 1.25rem;
+  }
+  
+  .cta .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+  }
+  
+  .cta .btn:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+
+
+
+  /* Custom styling for FAQ Section */
+  #faq .accordion-button {
+    background-color: #4f7bc4;
+    color: white;
+    font-weight: bold;
+  }
+
+  #faq .accordion-button:focus {
+    box-shadow: none;
+  }
+
+  #faq .accordion-button.collapsed {
+    background-color: #3a6ea5;
+  }
+
+  #faq .accordion-body {
+    background-color: #f8f9fa;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  #faq h2 {
+    font-size: 2rem;
+    color: #4f7bc4;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+
+ 
+  /* Custom Footer Styles */
+  footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  footer .footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+
+  footer h5 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  footer p {
+    font-size: 1.1rem;
+    color: #d1d1d1;
+    margin-bottom: 30px;
+  }
+
+  footer .social-links a {
+    margin: 0 15px;
+    font-size: 1.5rem;
+    color: #f8f9fa;
+    transition: color 0.3s ease;
+  }
+
+  footer .social-links a:hover {
+    color: #4f7bc4;
+  }
+
+  footer .footer-nav {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  footer .footer-nav li {
+    margin-right: 30px;
+  }
+
+  footer .footer-nav a {
+    color: #d1d1d1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+
+  footer .footer-nav a:hover {
+    color: #4f7bc4;
+  }
+
+  footer .copyright {
+    font-size: 1rem;
+    color: #d1d1d1;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 767px) {
+    footer .footer-nav {
+      flex-direction: column;
+    }
+
+    footer .footer-nav li {
+      margin-bottom: 10px;
+    }
+  }
+
+  /* General Section Spacing */
+  section {
+    padding: 60px 0;  /* Adds space inside each section */
+    margin-bottom: 60px;  /* Adds space below each section */
+  }
+
+  /* Specific Spacing for Sections */
+  .intro-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: 40px;  /* Space below intro section */
+  }
+
+  .impact-visualization {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+  }
+
+  .features-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: 60px;
+  }
+
+  .pricing-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: 60px;
+  }
+
+  .faq-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: 60px;
+  }
+
+  footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 80px;  /* Space above footer */
+  }
+
+  /* Spacing for Navbar */
+  nav {
+    margin-bottom: 40px;  /* Space below the navbar */
+  }
+
+  /* Adjustments for Mobile Devices */
+  @media (max-width: 767px) {
+    section {
+      padding: 40px 0;  /* Reduced padding for mobile */
+      margin-bottom: 40px;  /* Reduced margin for mobile */
+    }
+  }
+
+
+

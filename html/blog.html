@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Deployment Impact Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg " style="height: 75px;background-color: #4f7bc4;">
+          <div class="container-fluid">
+            <a href="../index.html">
+              <img src="/images/icon.jpg" alt="This is logo" width="50" height="50" style="border-radius: 30px;" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 80px;display: flex; flex-direction: row; gap: 40px;">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html" style="color: white; font-size: 1.3rem;">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/about.html" style="color: white; font-size: 1.3rem;">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/blog.html" style="color: white; font-size: 1.3rem;">Blogs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/contact.html" style="color: white; font-size: 1.3rem;">Contact</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline" type="submit" style="color:#4f7bc4; background-color:#FFD700;">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <section id="blog" class="py-5 mt-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Latest News on Deployment & Technology</h2>
+            <div class="news-grid" id="news-container">
+                <!-- News Articles will be injected here -->
+            </div>
+            
+            <!-- Pagination -->
+            <nav aria-label="Page navigation" class="mt-5">
+                <ul class="pagination justify-content-center" id="pagination">
+                    <!-- Pagination will be dynamically added here -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Deployment Impact Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/blog.js"></script>
+</body>
+</html>
