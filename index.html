@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <!-- Chart.js CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
@@ -18,52 +19,29 @@
     <link href="/css/home.css" rel="stylesheet"/>
   </head>
   <body>
-    <!--Navbar Section-->
     <div class="header">
-      <nav class="navbar navbar-expand-lg " style="height: 75px;background-color: #4f7bc4;">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a href="index.html">
-            <img src="/images/icon.jpg" alt="This is logo" width="50" height="50" style="border-radius: 30px;" />
+          <a href="index.html" class="navbar-brand">
+            <img src="/images/icon.jpg" alt="Logo" class="nav-logo">
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 80px;display: flex; flex-direction: row; gap: 40px;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="color: white; font-size: 1.3rem;">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/about.html" style="color: white; font-size: 1.3rem;">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/blog.html" style="color: white; font-size: 1.3rem;">Blogs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/contact.html" style="color: white; font-size: 1.3rem;">Contact</a>
-              </li>
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/html/about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="/html/blog.html">Blogs</a></li>
+              <li class="nav-item"><a class="nav-link" href="/html/contact.html">Contact</a></li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline" type="submit" style="color:#4f7bc4; background-color:#FFD700;">Search</button>
-            </form>
+    
+            <!-- Auth Section (populated dynamically) -->
+            <div class="auth-section"></div>
           </div>
         </div>
       </nav>
     </div>
+    
+    
 
     <!--First section-->
     <section class="deployment-impact-tracker py-5" style="background-color: #f0f4f8;">
@@ -223,39 +201,67 @@
         </div>
       </section>
 
-      <!--Trust Section-->
-
-      <section class="testimonials py-5">
-        <div class="container">
-          <h2 class="text-center text-primary mb-5">What Our Users Say</h2>
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="testimonial card shadow-sm border-light rounded">
-                <div class="card-body">
-                  <p class="card-text">"This tool has completely transformed how we monitor user feedback after deployments. The sentiment analysis is incredibly accurate!"</p>
-                  <strong>- Jane Doe, Product Manager</strong>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="testimonial card shadow-sm border-light rounded">
-                <div class="card-body">
-                  <p class="card-text">"Real-time monitoring and analysis helped us fix issues quickly, improving the overall user experience. Highly recommended!"</p>
-                  <strong>- John Smith, CTO</strong>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="testimonial card shadow-sm border-light rounded">
-                <div class="card-body">
-                  <p class="card-text">"I love how easy it was to integrate this into our current workflow. The insights we gain help guide our future updates."</p>
-                  <strong>- Sarah Lee, Lead Developer</strong>
-                </div>
+<!-- Testimonials Section -->
+<section class="testimonials py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="display-4 fw-bold text-primary">What Our Users Say</h2>
+        <div class="title-underline"></div>
+      </div>
+    </div>
+    
+    <!-- Testimonials Slider -->
+    <div class="row">
+      <div class="testimonials-wrapper">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="quote-icon">❝</div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">This tool has completely transformed how we monitor user feedback after deployments. The sentiment analysis is incredibly accurate!</p>
+            <div class="testimonial-footer">
+              <div class="author-avatar">JD</div>
+              <div class="author-info">
+                <h5>Jane Doe</h5>
+                <p>Product Manager</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="quote-icon">❝</div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">Real-time monitoring and analysis helped us fix issues quickly, improving the overall user experience. Highly recommended!</p>
+            <div class="testimonial-footer">
+              <div class="author-avatar">JS</div>
+              <div class="author-info">
+                <h5>John Smith</h5>
+                <p>CTO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="quote-icon">❝</div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">I love how easy it was to integrate this into our current workflow. The insights we gain help guide our future updates.</p>
+            <div class="testimonial-footer">
+              <div class="author-avatar">SL</div>
+              <div class="author-info">
+                <h5>Sarah Lee</h5>
+                <p>Lead Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     
     
       <!--call to action section-->
@@ -411,37 +417,94 @@
 
 
  <!-- Footer Section -->
-<footer>
-    <!-- Logo or Brand Name -->
-    <img src="./images/icon.jpg" alt="Logo" class="footer-logo" style="border-radius: 100px;height: 100px; width: 100px;">
-    
-    <!-- Footer Title -->
-    <h5>Get In Touch</h5>
-    
-    <!-- Short Description -->
-    <p>We are here to help you track and improve your deployment impact using advanced sentiment analysis techniques.</p>
-    
-    <!-- Social Media Links (Add appropriate links) -->
-    <div class="social-links">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  
-    <!-- Footer Navigation -->
-    <ul class="footer-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    
-    <!-- Copyright Notice -->
-    <div class="copyright">
-      <p>&copy; 2025 Deployment Impact Tracker. All Rights Reserved.</p>
-    </div>
-  </footer>
+<footer class="footer-section">
+  <div class="footer-top">
+      <div class="container">
+          <div class="footer-content">
+              <!-- Company Info Section -->
+              <div class="footer-company-info">
+                  <img src="./images/icon.jpg" alt="Logo" class="footer-logo">
+                  <h5 class="footer-title">Deployment Impact Tracker</h5>
+                  <p class="company-desc">Empowering teams with real-time deployment insights and advanced sentiment analysis for better decision making.</p>
+              </div>
+
+              <!-- Quick Links Section -->
+              <div class="footer-links">
+                  <h6>Quick Links</h6>
+                  <ul>
+                      <li><a href="#home">Home</a></li>
+                      <li><a href="#about">About Us</a></li>
+                      <li><a href="#features">Features</a></li>
+                      <li><a href="#pricing">Pricing</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                  </ul>
+              </div>
+
+              <!-- Contact Info Section -->
+              <div class="footer-contact">
+                  <h6>Get In Touch</h6>
+                  <ul>
+                      <li>
+                          <i class="fas fa-envelope"></i>
+                          <a href="mailto:info@example.com">info@example.com</a>
+                      </li>
+                      <li>
+                          <i class="fas fa-phone"></i>
+                          <a href="tel:+1234567890">+1 (234) 567-890</a>
+                      </li>
+                      <li>
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>123 Tech Street, Silicon Valley, CA</span>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Newsletter Section -->
+              <div class="footer-newsletter">
+                  <h6>Newsletter</h6>
+                  <p>Subscribe for updates and insights</p>
+                  <form class="newsletter-form">
+                      <div class="input-group">
+                          <input type="email" placeholder="Your email address" class="form-control">
+                          <button type="submit" class="btn btn-primary">
+                              <i class="fas fa-paper-plane"></i>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Social Media Strip -->
+  <div class="social-strip">
+      <div class="container">
+          <div class="social-links">
+              <a href="https://facebook.com" target="_blank" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" class="social-icon">
+                  <i class="fab fa-instagram"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="footer-bottom">
+      <div class="container">
+          <div class="copyright">
+              <p>&copy; 2025 Deployment Impact Tracker. All Rights Reserved.</p>
+          </div>
+      </div>
+  </div>
+</footer>
   
   
   

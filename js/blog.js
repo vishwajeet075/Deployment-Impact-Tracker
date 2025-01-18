@@ -1,4 +1,4 @@
-const apiKey = process.env.api_key;
+const apiKey = "0a988c8c942947d5a18017e01d23ef86";
 const newsContainer = document.getElementById('news-container');
 const pagination = document.getElementById('pagination');
 let currentPage = 1;

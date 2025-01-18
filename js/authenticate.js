@@ -8,11 +8,6 @@ const switchToSignupLinks = document.querySelectorAll('.switch-to-signup');
 const switchToLoginLinks = document.querySelectorAll('.switch-to-login');
 const forgotPasswordLinks = document.querySelectorAll('.forgot-password-link');
 
-// Google Auth Configuration
-const googleConfig = {
-    clientId: process.env.client_id, // Replace with your Google Client ID
-    scope: 'email profile'
-};
 
 // Form Navigation
 function showForm(formToShow) {
@@ -25,16 +20,17 @@ function showForm(formToShow) {
     formToShow.classList.remove('hidden');
 }
 
-// Form Validation
-function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
 
 function validatePassword(password) {
     // Minimum 8 characters, at least one uppercase, one lowercase, one number
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     return passwordRegex.test(password);
+}
+
+// Utility Function: Validate Email
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 // Password Visibility Toggle
@@ -56,38 +52,81 @@ function setupPasswordToggles() {
     });
 }
 
-// Form Submission Handlers
 async function handleLogin(event) {
     event.preventDefault();
+    
+    // Get form values
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
     const rememberMe = document.getElementById('remember-me').checked;
-
+    
+    // Validate email
     if (!validateEmail(email)) {
         showError('login-email', 'Please enter a valid email address');
         return;
     }
-
+    
+    // Create login data object
+    const loginData = {
+        email: email,
+        password: password,
+        rememberMe: rememberMe
+    };
+    
     try {
-        // Replace with your actual API endpoint
-        const response = await fetch('/api/login', {
+        const response = await fetch('http://localhost:8080/login.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email, password, rememberMe }),
+            credentials: 'include',
+            body: JSON.stringify(loginData)
         });
-
-        if (response.ok) {
-            window.location.href = '/dashboard'; // Redirect to dashboard on success
+        
+        console.log('Response status:', response.status);
+        
+        // Get response text
+        const responseText = await response.text();
+        console.log('Raw response:', responseText);
+        
+        // Parse JSON response
+        let data;
+        try {
+            data = JSON.parse(responseText);
+            console.log('Parsed response:', data);
+        } catch (e) {
+            console.error('JSON parse error:', e);
+            throw new Error('Invalid JSON response from server');
+        }
+        
+        if (response.ok && data.success) {
+            // Store user information in cookies
+            document.cookie = `user_id=${encodeURIComponent(data.user.id)}; path=/; SameSite=Strict`;
+            document.cookie = `email=${encodeURIComponent(data.user.email)}; path=/; SameSite=Strict`;
+            
+            if (rememberMe) {
+                document.cookie = `remember_me=true; path=/; max-age=${30 * 24 * 60 * 60}; SameSite=Strict`;
+            }
+            
+            // Redirect to homepage/dashboard
+            window.location.href = '../index.html';
         } else {
-            const data = await response.json();
-            showError('login-form', data.message || 'Login failed');
+            const errorMessage = data.message || 'Login failed';
+            showError('login-form', errorMessage);
         }
     } catch (error) {
+        console.error('Login error:', error);
         showError('login-form', 'An error occurred. Please try again later.');
     }
 }
+
+
+
+
+
+
+
+
 
 async function handleSignup(event) {
     event.preventDefault();
@@ -113,7 +152,7 @@ async function handleSignup(event) {
 
     try {
         // Replace with your actual API endpoint
-        const response = await fetch('/api/signup', {
+        const response = await fetch('http://localhost:8080/signup.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -122,7 +161,7 @@ async function handleSignup(event) {
         });
 
         if (response.ok) {
-            window.location.href = '/dashboard'; // Redirect to dashboard on success
+            showForm(loginForm);
         } else {
             const data = await response.json();
             showError('signup-form', data.message || 'Signup failed');
@@ -162,49 +201,12 @@ async function handleForgotPassword(event) {
     }
 }
 
-// Google Sign In
-async function initializeGoogleAuth() {
-    try {
-        await google.accounts.id.initialize({
-            client_id: googleConfig.clientId,
-            callback: handleGoogleSignIn
-        });
-        
-        const googleButtons = document.querySelectorAll('.google-btn');
-        googleButtons.forEach(button => {
-            google.accounts.id.renderButton(button, {
-                theme: 'outline',
-                size: 'large',
-                width: button.offsetWidth
-            });
-        });
-    } catch (error) {
-        console.error('Failed to initialize Google Sign-In:', error);
-    }
-}
 
-async function handleGoogleSignIn(response) {
-    try {
-        // Replace with your actual API endpoint
-        const result = await fetch('/api/google-auth', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ token: response.credential }),
-        });
 
-        if (result.ok) {
-            window.location.href = '/dashboard';
-        } else {
-            showError('login-form', 'Google sign-in failed');
-        }
-    } catch (error) {
-        showError('login-form', 'An error occurred during Google sign-in');
-    }
-}
 
-// Error and Success Handlers
+
+
+// Function to show error messages
 function showError(elementId, message) {
     const element = document.getElementById(elementId);
     const errorDiv = document.createElement('div');
@@ -218,7 +220,11 @@ function showError(elementId, message) {
     }
     
     element.parentElement.appendChild(errorDiv);
-    setTimeout(() => errorDiv.remove(), 5000); // Remove error after 5 seconds
+    
+    // Remove error message after 3 seconds
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 3000);
 }
 
 function showSuccess(formId, message) {
@@ -263,6 +269,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setup password toggles
     setupPasswordToggles();
 
-    // Initialize Google Sign-In
-    initializeGoogleAuth();
+  
 });

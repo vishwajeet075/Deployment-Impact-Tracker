@@ -18,6 +18,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 /* Container Layout */
@@ -79,7 +80,9 @@ h2 {
 }
 
 .form-control:focus {
-    border-color: var(--primary-color);
+    outline: none; /* Removes the blue outline */
+    box-shadow: none; /* Removes any additional focus shadow */
+    border-color: var(--primary-color); /* Optional: Custom border color on focus */
 }
 
 .form-group label {
