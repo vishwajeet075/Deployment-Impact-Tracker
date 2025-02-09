@@ -1,0 +1,53 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set Deployment Version
+        run: |
+          DEPLOYMENT_VERSION=$(date +'%Y-%m-%d-%H-%M-%S')
+          INDEX_FILE="index.html"
+
+          # Check if index.html exists
+          if [ -f "$INDEX_FILE" ]; then
+            # Check if meta tag exists, then update or add it
+            if grep -q '<meta name="deployment-version"' "$INDEX_FILE"; then
+              sed -i 's/<meta name="deployment-version" content="[^"]*"/<meta name="deployment-version" content="'$DEPLOYMENT_VERSION'"/' "$INDEX_FILE"
+            else
+              sed -i 's|</head>|  <meta name="deployment-version" content="'$DEPLOYMENT_VERSION'">\n</head>|' "$INDEX_FILE"
+            fi
+          else
+            echo "index.html not found!"
+            exit 1
+          fi
+
+      - name: Ensure Feedback Script is Present
+        run: |
+          FEEDBACK_SCRIPT='<script src="https://vishwajeet075.github.io/Widget_Feedback/widget.js"></script>'
+          
+          # Check if script is already present
+          if ! grep -qF "$FEEDBACK_SCRIPT" "index.html"; then
+            sed -i 's|</body>|  '"$FEEDBACK_SCRIPT"'\n</body>|' index.html
+            echo "Feedback script added to index.html"
+          else
+            echo "Feedback script already exists"
+          fi
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
+          git add index.html
+          git commit -m "Updated deployment version and ensured feedback script" || echo "No changes to commit"
+          git push
+
